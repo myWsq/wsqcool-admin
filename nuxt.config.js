@@ -58,6 +58,9 @@ module.exports = {
 	router: {
 		middleware: 'auth'
 	},
+	generate: {
+		dir: 'docs'
+	},
 	build: {
 		/*
     ** You can extend webpack config here
