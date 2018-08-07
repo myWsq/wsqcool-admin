@@ -1,7 +1,10 @@
 export const state = () => ({
 	isMobile: false,
 	snackBar: false,
-	snackBarText: ''
+	snackBarText: '',
+	remember: true,
+	loading: 0,
+	me: null
 });
 
 export const mutations = {
@@ -15,5 +18,17 @@ export const mutations = {
 	snackBarClose(state) {
 		state.snackBar = false;
 		state.snackBarText = '';
+	},
+	setMe(state, me) {
+		state.me = me;
+	},
+	setRemember(state, remember) {
+		state.remember = remember;
+	},
+	load(state) {
+		state.loading++;
+	},
+	dump(state) {
+		state.loading--;
 	}
 };

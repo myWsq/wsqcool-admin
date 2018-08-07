@@ -1,13 +1,13 @@
 <template>
     <div>
-        <nuxt-child></nuxt-child>
+        hello
     </div>
 </template>
 
 <script>
-export default {
-
-}
+    export default {
+        
+    }
 </script>
 
 <style scoped>

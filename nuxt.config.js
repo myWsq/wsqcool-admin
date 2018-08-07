@@ -43,18 +43,21 @@ module.exports = {
 
 	apollo: {
 		includeNodeModules: true, // optional, default: false (this includes graphql-tag for node_modules folder)
-    // required
+		// required
 		clientConfigs: {
 			default: {
 				httpEndpoint: 'http://localhost:4000/graphql',
-        wsEndpoint: 'ws://localhost:4000/graphql',
-        ssr:false
+				wsEndpoint: 'ws://localhost:4000/graphql',
+				ssr: false
 			}
 		}
 	},
 	/*
   ** Build configuration
   */
+	router: {
+		middleware: 'auth'
+	},
 	build: {
 		/*
     ** You can extend webpack config here

@@ -71,11 +71,11 @@ $height = 50;
 }
 
 #rect-border {
-    animation: move 1s ease;
+    animation: move 1s ease infinite alternate;
 }
 
 .corner {
-    animation: move 1s ease;
+    animation: move 1s ease infinite alternate;
 }
 
 #rect-bg {
