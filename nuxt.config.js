@@ -56,7 +56,8 @@ module.exports = {
   ** Build configuration
   */
 	router: {
-		middleware: 'auth'
+		middleware: 'auth',
+		base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/wsqcool-admin/' : '/'
 	},
 	generate: {
 		dir: 'docs'

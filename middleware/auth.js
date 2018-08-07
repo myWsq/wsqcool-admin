@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 
 export default ({ app, store, redirect, route }) => {
 	const token = app.$apolloHelpers.getToken();
-	const isLoginPage = route.path === '/login/' || route.path === '/login';
+	const isLoginPage = route.name === 'login';
 	// 没有token直接导航至登录页面
 	if (!token) {
 		if (!isLoginPage) {
