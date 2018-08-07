@@ -1,0 +1,25 @@
+{
+  "name": "wsq.cool-admin",
+  "version": "1.0.0",
+  "description": "博客管理页面",
+  "author": "wsq",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/apollo": "^4.0.0-rc1",
+    "graphql-tag": "^2.9.2",
+    "material-design-icons-iconfont": "^3.0.3",
+    "nuxt": "^1.4.2",
+    "vuetify": "^1.0.19"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1"
+  }
+}
