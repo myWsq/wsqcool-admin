@@ -46,8 +46,8 @@ module.exports = {
 		// required
 		clientConfigs: {
 			default: {
-				httpEndpoint: 'http://localhost:4000/graphql',
-				wsEndpoint: 'ws://localhost:4000/graphql',
+				httpEndpoint: 'https://wsqcool-backend-wjodafqsjq.now.sh/graphql',
+				wsEndpoint: 'wss://wsqcool-backend-wjodafqsjq.now.sh/graphql',
 				ssr: false
 			}
 		}
