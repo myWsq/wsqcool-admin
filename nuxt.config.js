@@ -46,8 +46,8 @@ module.exports = {
 		// required
 		clientConfigs: {
 			default: {
-				httpEndpoint: 'https://wsqcool-backend-wjodafqsjq.now.sh/graphql',
-				wsEndpoint: 'wss://wsqcool-backend-wjodafqsjq.now.sh/graphql',
+				httpEndpoint: process.env.NODE_ENV === 'production' ? 'https://api.wsq.cool/graphql' :'http://localhost:4000/graphql',
+				wsEndpoint: process.env.NODE_ENV === 'production' ? 'wss://api.wsq.cool/graphql' :'ws://localhost:4000/graphql',
 				ssr: false
 			}
 		}
@@ -60,7 +60,7 @@ module.exports = {
 		base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/wsqcool-admin/' : '/'
 	},
 	generate: {
-		dir: 'docs'
+		dir: process.env.DEPLOY_ENV === 'GH_PAGES' ? 'docs' : 'dist'
 	},
 	build: {
 		/*
