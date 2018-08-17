@@ -29,7 +29,7 @@
       </v-layout>
     </v-content>
     <v-subheader id="footer">
-      &copy; 2018 POWERD BY WSQ.COOL BACKEND
+      &copy; 2018 POWERD BY <a target="_blank" href="https://github.com/myWsq/wsqcool-backend">WSQ.COOL BACKEND</a>
     </v-subheader>
   </v-app>
 </template>
@@ -115,5 +115,9 @@ export default {
   width: 100%;
   transform: translateX(-50%);
   color: #bcbcbc;
+}
+#footer > a{
+  margin-left: 0.4em;
+  color: #bcbcbc
 }
 </style>

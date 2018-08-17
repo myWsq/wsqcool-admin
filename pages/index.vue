@@ -79,7 +79,12 @@
             </v-dialog>
             <nuxt-child></nuxt-child>
         </v-content>
-        <v-footer></v-footer>
+        <v-footer app>
+            <v-layout align-center justify-center id="footer">
+                &copy; 2018 POWERD BY
+                <a target="_blank" href="https://github.com/myWsq/wsqcool-backend">WSQ.COOL BACKEND</a>
+            </v-layout>
+        </v-footer>
     </v-app>
 </template>
 
@@ -111,7 +116,7 @@ export default {
         }
     },
     computed: {
-        ...mapState(['me','sideBar','isMobile']),
+        ...mapState(['me', 'sideBar', 'isMobile']),
         userCreatedAt() {
             return moment(this.me.createdAt).fromNow()
         },
@@ -142,7 +147,7 @@ export default {
         }
     },
     methods: {
-        ...mapMutations(['setMe', 'snackBarOpen','setSideBar']),
+        ...mapMutations(['setMe', 'snackBarOpen', 'setSideBar']),
         async onUserSubmit(e) {
             e.preventDefault()
             if ((this.userName && this.userName.length > 0) || (this.password && this.password.length > 0)) {
@@ -250,5 +255,13 @@ export default {
 }
 .v-menu__content.menuable__content__active {
     position: fixed;
+}
+
+#footer{
+    color:#bcbcbc
+}
+#footer> a{
+    text-decoration: none;
+    margin-left: 0.4em;
 }
 </style>

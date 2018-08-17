@@ -19,9 +19,7 @@
             </v-list-tile>
         </v-list>
         <v-spacer></v-spacer>
-        <div id="footer">
-            &copy; 2018 POWERD BY <a target="_blank" href="https://github.com/myWsq/wsqcool-backend">WSQ.COOL BACKEND</a>
-        </div>
+       
     </v-navigation-drawer>
 </template>
 
@@ -85,10 +83,4 @@ export default {
     font-weight:50;
 }
 
-#footer{
-    position: absolute;
-    bottom:1em;
-    left:1em;
-    color:#bcbcbc
-}
 </style>

@@ -153,6 +153,10 @@
     "@types/express-serve-static-core" "*"
     "@types/mime" "*"
 
+"@types/validator@^9.4.1":
+  version "9.4.1"
+  resolved "http://registry.npm.taobao.org/@types/validator/download/@types/validator-9.4.1.tgz#bea5a290e61f1cbf12af3fd878706aeec2ba0087"
+
 "@types/ws@^5.1.2":
   version "5.1.2"
   resolved "http://registry.npm.taobao.org/@types/ws/download/@types/ws-5.1.2.tgz#f02d3b1cd46db7686734f3ce83bdf46c49decd64"
@@ -1837,6 +1841,10 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+cropperjs@^1.4.1:
+  version "1.4.1"
+  resolved "http://registry.npm.taobao.org/cropperjs/download/cropperjs-1.4.1.tgz#41d9fcd87f9d9cd2e1dcf27c36680cac7a48cd6b"
+
 cross-env@^5.0.1:
   version "5.2.0"
   resolved "http://registry.npm.taobao.org/cross-env/download/cross-env-5.2.0.tgz#6ecd4c015d5773e614039ee529076669b9d126f2"
@@ -2934,6 +2942,10 @@ he@1.1.x, he@^1.1.0:
   version "1.1.1"
   resolved "http://registry.npm.taobao.org/he/download/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
 
+highlight.js@^9.12.0:
+  version "9.12.0"
+  resolved "http://registry.npm.taobao.org/highlight.js/download/highlight.js-9.12.0.tgz#e6d9dbe57cbefe60751f02af336195870c90c01e"
+
 hmac-drbg@^1.0.0:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/hmac-drbg/download/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
@@ -3649,6 +3661,10 @@ map-visit@^1.0.0:
   resolved "http://registry.npm.taobao.org/map-visit/download/map-visit-1.0.0.tgz#ecdca8f13144e660f1b5bd41f12f3479d98dfb8f"
   dependencies:
     object-visit "^1.0.0"
+
+marked@^0.5.0:
+  version "0.5.0"
+  resolved "http://registry.npm.taobao.org/marked/download/marked-0.5.0.tgz#9e590bad31584a48ff405b33ab1c0dd25172288e"
 
 material-design-icons-iconfont@^3.0.3:
   version "3.0.3"
@@ -6246,6 +6262,10 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
+
+validator@^10.6.0:
+  version "10.6.0"
+  resolved "http://registry.npm.taobao.org/validator/download/validator-10.6.0.tgz#a9bdce685b3c3e8480e7ebbb9eb95c54cd9733b0"
 
 vary@^1, vary@~1.1.2:
   version "1.1.2"
