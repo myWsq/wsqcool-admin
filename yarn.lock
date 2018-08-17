@@ -12,6 +12,10 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
+"@fortawesome/fontawesome-free@^5.2.0":
+  version "5.2.0"
+  resolved "http://registry.npm.taobao.org/@fortawesome/fontawesome-free/download/@fortawesome/fontawesome-free-5.2.0.tgz#50cd9856774351c56c0b1b0db4efe122d7913e58"
+
 "@nuxtjs/apollo@^4.0.0-rc1":
   version "4.0.0-rc1"
   resolved "http://registry.npm.taobao.org/@nuxtjs/apollo/download/@nuxtjs/apollo-4.0.0-rc1.tgz#2dc9470d5c23df43c176421372bc5d8699425d37"
@@ -6361,8 +6365,8 @@ vue@^2.5.17:
   resolved "http://registry.npm.taobao.org/vue/download/vue-2.5.17.tgz#0f8789ad718be68ca1872629832ed533589c6ada"
 
 vuetify@^1.0.19:
-  version "1.1.9"
-  resolved "http://registry.npm.taobao.org/vuetify/download/vuetify-1.1.9.tgz#3eb497cc89d318ee6865bbebd081f5830f83f8ba"
+  version "1.1.13"
+  resolved "http://registry.npm.taobao.org/vuetify/download/vuetify-1.1.13.tgz#42bc2a18fd7e3c610358b7a4f54ee3fe748b9676"
 
 vuex@^3.0.1:
   version "3.0.1"

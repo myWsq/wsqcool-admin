@@ -12,6 +12,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.2.0",
     "@nuxtjs/apollo": "^4.0.0-rc1",
     "graphql-tag": "^2.9.2",
     "material-design-icons-iconfont": "^3.0.3",

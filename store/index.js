@@ -1,5 +1,6 @@
 export const state = () => ({
 	isMobile: false,
+	sideBar: true,
 	snackBar: false,
 	snackBarText: '',
 	remember: true,
@@ -30,5 +31,8 @@ export const mutations = {
 	},
 	dump(state) {
 		state.loading--;
+	},
+	setSideBar(state, status) {
+		state.sideBar = status;
 	}
 };

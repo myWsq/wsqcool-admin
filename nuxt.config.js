@@ -28,7 +28,8 @@ module.exports = {
 	css: [
 		'@/assets/app.styl',
 		'vuetify/src/stylus/main.styl',
-		'material-design-icons-iconfont/dist/material-design-icons.css'
+		'material-design-icons-iconfont/dist/material-design-icons.css',
+		'@fortawesome/fontawesome-free/css/all.min.css'
 	],
 
 	/*
