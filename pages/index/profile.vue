@@ -1,42 +1,31 @@
 <template>
     <v-container grid-list-xl>
-        <v-layout align-center justify-center style="min-height:100vh" v-if="loading>0">
+        <v-layout align-center justify-center class="mark" v-if="loading>0">
             <logo style="height:3em;"></logo>
         </v-layout>
-        <v-layout else wrap>
+        <v-layout else wrap style="min-height:100%">
             <v-flex xs12 md8>
                 <v-subheader>编辑个人信息:</v-subheader>
-                <v-card>
-                    <v-container grid-list-xl>
-                        <v-form v-model="valid" ref="form" lazy-validation>
-                            <v-layout row wrap>
-                                <v-flex xs12 sm6>
-                                    <v-text-field clearable single-line label="昵称" v-model="info.name"></v-text-field>
-                                </v-flex>
-                                <v-flex xs12 sm6>
-                                    <v-text-field clearable label="邮箱" v-model="info.email"></v-text-field>
-
-                                </v-flex>
-                                <v-flex xs12>
-                                    <v-text-field clearable label="Github URL" v-model="info.github"></v-text-field>
-                                </v-flex>
-                                <v-flex xs12>
-                                    <v-text-field clearable label="头像 URL ( 或Base 64 DATA_URL )" v-model="info.avatar"></v-text-field>
-                                </v-flex>
-
-                                <v-flex xs12>
-                                    <v-textarea outline label="描述 ( 支持markdown )" v-model="info.description" hide-details></v-textarea>
-                                </v-flex>
-                            </v-layout>
-                            <v-layout justify-end>
-                                <v-btn @click="submit" :disabled="!valid" flat color="primary" :loading="submitLoading>0">
-                                    提交
-                                </v-btn>
-                                <v-btn @click="reset" flat color="accent">还原</v-btn>
-                            </v-layout>
-                        </v-form>
-                    </v-container>
-
+                <v-card style="min-height:calc(100% - 2em);display:flex">
+                    <v-card-text style="display:flex;flex-direction:column;">
+                        <v-layout row wrap>
+                            <v-flex xs12 sm6>
+                                <v-text-field clearable label="昵称" v-model="info.name" hide-details></v-text-field>
+                            </v-flex>
+                            <v-flex xs12 sm6>
+                                <v-text-field clearable label="邮箱" v-model="info.email" hide-details></v-text-field>
+                            </v-flex>
+                        </v-layout>
+                        <v-text-field clearable label="Github URL" v-model="info.github"></v-text-field>
+                        <v-text-field clearable label="头像 URL ( 或Base 64 DATA_URI )" v-model="info.avatar"></v-text-field>
+                        <v-textarea outline label="描述 ( 支持markdown )" auto-grow v-model="info.description" hide-details style="flex-grow:2"></v-textarea>
+                        <v-layout justify-end>
+                            <v-btn @click="submit" :disabled="!valid" flat color="primary" :loading="submitLoading>0">
+                                提交
+                            </v-btn>
+                            <v-btn @click="reset" flat color="accent">还原</v-btn>
+                        </v-layout>
+                    </v-card-text>
                 </v-card>
             </v-flex>
             <v-flex xs12 md4>
@@ -132,5 +121,13 @@ export default {
 </script>
 
 <style scoped>
-
+.mark{
+    position: absolute;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
 </style>

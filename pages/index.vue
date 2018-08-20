@@ -1,5 +1,25 @@
 <template>
     <v-app v-if="me">
+        <v-dialog v-model="userPop" persistent max-width="500px">
+            <v-card>
+                <v-card-title>
+                    <h3>修改用户名或密码</h3>
+                </v-card-title>
+                <v-card-text>
+                    <v-form ref="form">
+                        <v-text-field label="用户名" prepend-icon="person" v-model="userName"></v-text-field>
+                        <v-text-field label="密码" prepend-icon="lock" type="password" v-model="password"></v-text-field>
+                        <v-layout>
+                            <v-spacer></v-spacer>
+                            <v-btn flat @click="cancel" v-if="!this.userLoading>0">取消</v-btn>
+                            <v-btn type="submit" @click="onUserSubmit" :loading="this.userLoading>0" flat color="primary">
+                                提交
+                            </v-btn>
+                        </v-layout>
+                    </v-form>
+                </v-card-text>
+            </v-card>
+        </v-dialog>
         <v-toolbar app fixed flat :style="{'border-bottom':`${toolbarFloat ? 1 : 0}px solid #dfdfdf`}" v-scroll="onScroll">
             <v-toolbar-side-icon @click="setSideBar(!sideBar)"></v-toolbar-side-icon>
             <v-toolbar-title>{{routeName[$route.name]}}</v-toolbar-title>
@@ -22,7 +42,7 @@
                                 <v-list-tile-sub-title>{{item.content}}</v-list-tile-sub-title>
                             </v-list-tile-content>
                             <v-list-tile-action>
-                                <v-list-tile-action-text>{{fromNow(item.time) }}</v-list-tile-action-text>
+                                <v-list-tile-action-text>{{$moment(item.time).fromNow() }}</v-list-tile-action-text>
                             </v-list-tile-action>
                         </v-list-tile>
                     </template>
@@ -39,7 +59,7 @@
                         <v-list-tile>
                             <v-list-tile-content>
                                 <v-list-tile-title>{{me.name}}</v-list-tile-title>
-                                <v-list-tile-sub-title>创建于: {{userCreatedAt}}</v-list-tile-sub-title>
+                                <v-list-tile-sub-title>创建于: {{$moment(me.createdAt).fromNow()}}</v-list-tile-sub-title>
                             </v-list-tile-content>
                             <v-list-tile-action>
                                 <v-btn icon @click="logout">
@@ -57,45 +77,23 @@
         </v-toolbar>
         <draw></draw>
         <v-content>
-            <v-dialog v-model="userPop" persistent max-width="500px">
-                <v-card>
-                    <v-card-title>
-                        <h3>修改用户名或密码</h3>
-                    </v-card-title>
-                    <v-card-text>
-                        <v-form ref="form">
-                            <v-text-field label="用户名" prepend-icon="person" v-model="userName"></v-text-field>
-                            <v-text-field label="密码" prepend-icon="lock" type="password" v-model="password"></v-text-field>
-                            <v-layout>
-                                <v-spacer></v-spacer>
-                                <v-btn flat @click="cancel" v-if="!this.userLoading>0">取消</v-btn>
-                                <v-btn type="submit" @click="onUserSubmit" :loading="this.userLoading>0" flat color="primary">
-                                    提交
-                                </v-btn>
-                            </v-layout>
-                        </v-form>
-                    </v-card-text>
-                </v-card>
-            </v-dialog>
-            <nuxt-child></nuxt-child>
-        </v-content>
-        <v-footer app>
-            <v-layout align-center justify-center id="footer">
-                &copy; 2018 POWERD BY
-                <a target="_blank" href="https://github.com/myWsq/wsqcool-backend">WSQ.COOL BACKEND</a>
+            <v-layout column justify-space-between style="height:100%">
+                <nuxt-child></nuxt-child>
+                <v-footer>
+                    <v-layout align-center justify-center id="footer">
+                        &copy; 2018 POWERD BY
+                        <a target="_blank" href="https://github.com/myWsq/wsqcool-backend">WSQ.COOL BACKEND</a>
+                    </v-layout>
+                </v-footer>
             </v-layout>
-        </v-footer>
+        </v-content>
     </v-app>
 </template>
 
 <script>
 import { mapState, mapMutations } from 'vuex';
 import gql from 'graphql-tag';
-import moment from 'moment';
 import Draw from "../components/draw";
-import 'moment/locale/zh-cn';
-
-moment.locale('zh-cn');
 export default {
     components: { Draw },
     data() {
@@ -117,10 +115,6 @@ export default {
     },
     computed: {
         ...mapState(['me', 'sideBar', 'isMobile']),
-        userCreatedAt() {
-            return moment(this.me.createdAt).fromNow()
-        },
-        // 获取排序后插入标题的数组的数组
         groupNotifications() {
             let tmp = [...this.notifications];
             tmp.sort((obj1, obj2) => {
@@ -195,9 +189,6 @@ export default {
             this.userPop = false
             this.$refs.form.reset();
         },
-        fromNow(str) {
-            return moment(str).fromNow()
-        },
         async onClearNotification() {
             const mutation = gql`
                 mutation{
@@ -258,7 +249,7 @@ export default {
 }
 
 #footer{
-    color:#bcbcbc
+    color:#bcbcbc;
 }
 #footer> a{
     text-decoration: none;
